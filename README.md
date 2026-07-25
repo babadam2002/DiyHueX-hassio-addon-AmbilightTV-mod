@@ -1,5 +1,5 @@
 <div align="center">
-<img src="[https://github.com/diyhue/hassio-addon/blob/master/images/diyhue-hassio.png](https://github.com/babadam2002/DiyHueX-hassio-addon-AmbilightTV-mod/blob/main/images/DiyHueX-hassio.png?raw=true)">
+<img src="https://raw.githubusercontent.com/babadam2002/DiyHueX-hassio-addon-AmbilightTV-mod/refs/heads/main/images/DiyHueX-hassio.png">
 <h1>Home Assistant Add-on: DiyHueX</h1>
 <br>
 <p>Run <a href="">DiyHueX</a> as a Home Assistant Add-on</p>
