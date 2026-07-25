@@ -30,4 +30,4 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
 - `Entertainment_Area_Extender_udp_port`: UDP port. Default is 12345.
 
 
-[img-ecosystem]: https://raw.githubusercontent.com/diyhue/diyhue.github.io/master/assets/images/hue-map.png](https://raw.githubusercontent.com/babadam2002/DiyHueX-hassio-addon-AmbilightTV-mod/refs/heads/main/images/DiyHueX-map.png
+[img-ecosystem]: https://raw.githubusercontent.com/babadam2002/DiyHueX-hassio-addon-AmbilightTV-mod/refs/heads/main/images/DiyHueX-map.png
