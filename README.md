@@ -1,12 +1,12 @@
 <div align="center">
 <img src="https://github.com/diyhue/hassio-addon/blob/master/images/diyhue-hassio.png">
-<h1>Home Assistant Add-on: diyHue</h1>
+<h1>Home Assistant Add-on: DiyHueX</h1>
 <br>
-<p>Run <a href="">diyHue</a> as a Home Assistant Add-on</p>
+<p>Run <a href="">DiyHueX</a> as a Home Assistant Add-on</p>
 <a href="https://github.com/babadam2002/diyhue-HA-addon-AmbilightTV-mod"><img src="https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg"></a>
 </div>
 
-## Support the real diyHue!
+## Support the real diyHue team!
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/diyhue)
 ## Support Me!
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/babadam)
@@ -24,7 +24,7 @@ Add the repository URL under **Supervisor → Add-on store → ⋮ → Manage ad
 
 ## Usage
 - Set these options in the Home Assistant addon UI under "Configuration".
-- `min_brightness_threshold`: Black level for AmbilightTV + Hue. Minimum 35 recommended. AmbilightTv have one problem, that the backgound minimum light is always on, this will turn it off.
+- `min_brightness_threshold`: Black level for AmbilightTV + Hue. Minimum 35 recommended. Ambilight TV have one problem, that the backgound minimum light is always on, this will turn it off.
 - `Entertainment_Area_Extender_udp_ip`: Usually your HA IP without port. You need to install the Entertainment Area Extender addon  for diyhue-HA-addon-AmbilightTV-mod addon.
 
 - `Entertainment_Area_Extender_udp_port`: UDP port. Default is 12345.
