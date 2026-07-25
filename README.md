@@ -3,7 +3,7 @@
 <h1>Home Assistant Add-on: DiyHueX</h1>
 <br>
 <p>Run <a href="">DiyHueX</a> as a Home Assistant Add-on</p>
-<a href="https://github.com/babadam2002/diyhue-HA-addon-AmbilightTV-mod"><img src="https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg"></a>
+<a href="https://github.com/babadam2002/DiyHueX-hassio-addon-AmbilightTV-mod"><img src="https://my.home-assistant.io/badges/supervisor_add_addon_repository.svg"></a>
 </div>
 
 ## Support the real diyHue team!
