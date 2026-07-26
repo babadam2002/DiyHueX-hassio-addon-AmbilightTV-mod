@@ -1,5 +1,5 @@
 {
-	"name": "diyHue - Smart Light Ecosystem ",
-	"url": "https://github.com/diyhue/hassio-addon",
-	"maintainer": "diyHue <info@diyhue.org>"
+	"name": "DiyHueX - Smart Light Ecosystem eXtended version ",
+	"url": " original: https://github.com/diyhue/hassio-addon mod: https://github.com/babadam2002/DiyHueX-hassio-addon-AmbilightTV-mod",
+	"maintainer": "diyHue mod by Adam DiyHueX"
 }
