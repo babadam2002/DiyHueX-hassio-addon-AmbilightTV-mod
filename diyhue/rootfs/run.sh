@@ -10,6 +10,7 @@ export HTTP_PORT="$(bashio::config 'http_port')"
 export HTTPS_PORT="$(bashio::config 'https_port')"
 export IP="$(bashio::config 'ip')"
 
+
 export NO_SERVE_HTTPS="$(bashio::config 'no_serve_https')"
 
 if [[ -d $CONFIG_PATH ]]; then
@@ -19,25 +20,13 @@ else
     echo "$CONFIG_PATH created."
 fi
 
-# --- Mappa létrehozása és másolás indításkor ---
-TARGET_DIR="/config/hue-emulator"
-
-if [ ! -d "$TARGET_DIR" ]; then
-    echo "Creating $TARGET_DIR and copying files..."
-    mkdir -p "$TARGET_DIR"
-    cp -r /opt/hue-emulator/* "$TARGET_DIR/"
-fi
-
-# Átlépünk a /config/hue-emulator mappába
-cd "$TARGET_DIR"
-# -----------------------------------------------
 
 echo "Your Architecture is $BUILD_ARCHI"
 
 if [ "$NO_SERVE_HTTPS" = "true" ] ; then
     echo "No serve HTTPS"
-    python3 -u HueEmulator3.py --docker --no-serve-https --ip "$IP"
+    python3 -u /opt/hue-emulator/HueEmulator3.py --docker --no-serve-https --ip "$IP"
 else
     echo "Serve HTTPS"
-    python3 -u HueEmulator3.py --docker --ip "$IP"
+    python3 -u /opt/hue-emulator/HueEmulator3.py --docker --ip "$IP"
 fi
