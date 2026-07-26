@@ -87,13 +87,13 @@ VOLUME ["/config"]
 
 # Labels
 LABEL \
-	io.hass.name="DiyHueX" \
+	io.hass.name="diyHue" \
 	io.hass.description="Fully configurable diyHue Emulator" \
 	io.hass.arch="${BUILD_ARCH}" \
 	io.hass.type="addon" \
 	io.hass.version=${BUILD_VERSION} \
 	maintainer="diyHue <info@diyHue.org>" \
-	org.opencontainers.image.title="DiyHueX" \
+	org.opencontainers.image.title="diyHue" \
 	org.opencontainers.image.description="Fully configurable diyHue Emulator" \
 	org.opencontainers.image.vendor="diyHue" \
 	org.opencontainers.image.authors="diyHue <info@diyHue.org>" \
