@@ -16,7 +16,7 @@ ENV DIYHUE_VERSION=master
 ENV DIYHUE_COMMIT=main
 ENV DIYHUE_UI_VERSION=v2.0.3
 # A working dir átállítása a perszisztens /config alá:
-ENV WORKING_DIR=/config/hue-emulator
+ENV WORKING_DIR=/opt/hue-emulator
 
 # Create the needed folders
 RUN mkdir -p diyhue config ${WORKING_DIR}
