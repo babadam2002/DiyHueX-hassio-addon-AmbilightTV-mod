@@ -31,7 +31,7 @@
         "https_port": 443,
         "ip": "",
         "min_brightness_threshold": 35,
-        "Entertainment_Area_Extender_udp_ip": "",
+        "Entertainment_Area_Extender_udp_ip": "0.0.0.0",
         "Entertainment_Area_Extender_udp_port": 12345
     },
     "schema": {
