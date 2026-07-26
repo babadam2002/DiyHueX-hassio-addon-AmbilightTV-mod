@@ -15,10 +15,11 @@ ENV LANG C.UTF-8
 ENV DIYHUE_VERSION=master
 ENV DIYHUE_COMMIT=main
 ENV DIYHUE_UI_VERSION=v2.0.3
-ENV WORKING_DIR=/opt/hue-emulator
+# A working dir átállítása a perszisztens /config alá:
+ENV WORKING_DIR=/config/hue-emulator
 
 # Create the needed folders
-RUN mkdir diyhue config ${WORKING_DIR}
+RUN mkdir -p diyhue config ${WORKING_DIR}
 
 # Install all needed dependencies
 RUN apk add -q -u python3 openssl nmap psmisc iproute2 alpine-sdk build-base
@@ -32,25 +33,25 @@ RUN rm diyhue.zip
 # FIGYELEM: A kicsomagolt mappa neve DiyHueX-..., nem pedig diyHue-...
 RUN pip3 install -r /DiyHueX-${DIYHUE_COMMIT}/requirements.txt --no-cache-dir
 
-# Install diyHue (mindenhol átírva DiyHueX-re)
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/flaskUI /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/functions /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/lights /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/sensors /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/HueObjects /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/services /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/configManager /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/logManager /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/HueEmulator3.py /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/githubInstall.sh /opt/hue-emulator/
-RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/genCert.sh /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/openssl.conf /opt/hue-emulator/
+# Install diyHue (fájlok másolása a /config/hue-emulator mappába)
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/flaskUI ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/functions ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/lights ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/sensors ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/HueObjects ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/services ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/configManager ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/logManager ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/HueEmulator3.py ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/githubInstall.sh ${WORKING_DIR}/
+RUN cp -r /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/genCert.sh /DiyHueX-${DIYHUE_COMMIT}/BridgeEmulator/openssl.conf ${WORKING_DIR}/
 
 RUN curl -sL -o diyHueUI.zip https://github.com/diyhue/diyHueUI/releases/download/${DIYHUE_UI_VERSION}/DiyHueUI-release.zip
 RUN mkdir /diyhueUI
 RUN unzip -qo diyHueUI.zip -d /diyhueUI
 RUN rm diyHueUI.zip
-RUN cp -r /diyhueUI/dist/index.html			/opt/hue-emulator/flaskUI/templates/
-RUN cp -r /diyhueUI/dist/assets			/opt/hue-emulator/flaskUI/
+RUN cp -r /diyhueUI/dist/index.html			${WORKING_DIR}/flaskUI/templates/
+RUN cp -r /diyhueUI/dist/assets			${WORKING_DIR}/flaskUI/
 RUN rm -r /diyhueUI
 RUN rm -r /DiyHueX-${DIYHUE_COMMIT}
 
@@ -65,7 +66,7 @@ RUN apk --no-cache add --virtual build-deps gcc git make musl-dev \
 	&& apk del build-deps
 
 # Set working directory to the Archive folder
-WORKDIR /opt/hue-emulator
+WORKDIR ${WORKING_DIR}
 
 # Copy additional local build files
 COPY rootfs ./
