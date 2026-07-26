@@ -1,6 +1,6 @@
 {
     "name": "DiyHueX",
-    "version": "2.0.85",
+    "version": "2.0.86",
     "slug": "diyhuex",
     "description": "Emulate a Hue Bridge, AmbilightTV Background Light OFF, Entertainment Area Extender need another HA addon",
     "webui": "http://[HOST]:[PORT:80]",
